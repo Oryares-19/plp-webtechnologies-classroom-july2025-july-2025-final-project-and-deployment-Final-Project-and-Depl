@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Toggles the mobile navigation menu open/closed using the 'open' class
-     * defined in styles.css for a smooth transition.
      */
     function toggleMobileMenu() {
         mobileMenu.classList.toggle('open');
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle && mobileMenu) {
         menuToggle.addEventListener('click', toggleMobileMenu);
 
-        // Close menu when a link is clicked (useful for single-page scrolling)
+        // Close menu when a link is clicked (important for smooth navigation)
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.remove('open');
@@ -26,30 +25,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 2. Product Filtering Logic (Interactive Element 2) ---
     const productList = document.getElementById('product-list');
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
 
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
             const productCards = document.querySelectorAll('.product-card');
 
-            // Reset button styles to gray
+            // --- Button Highlighting Logic ---
             filterButtons.forEach(btn => {
+                // Remove primary color classes
                 btn.classList.remove('bg-[--primary-color]', 'text-white');
+                // Add default gray classes
                 btn.classList.add('bg-gray-300', 'text-gray-700');
             });
-            // Highlight the active button
+            // Apply primary color to the active button
             this.classList.add('bg-[--primary-color]', 'text-white');
             this.classList.remove('bg-gray-300', 'text-gray-700');
 
-            // Filter products based on category
+            // --- Product Filtering Logic ---
             productCards.forEach(card => {
                 const category = card.getAttribute('data-category');
-                if (filter === 'all' || category === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+                
+                // Hide card first with a class for smooth CSS transition
+                card.classList.add('product-hidden');
+
+                setTimeout(() => {
+                    // Decide if the card should be visible
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block'; // Ensure it's in the flow
+                        // Remove hidden class after a slight delay to trigger transition
+                        requestAnimationFrame(() => {
+                            card.classList.remove('product-hidden');
+                        });
+                    } else {
+                        // Keep hidden, but apply 'display: none' finally to remove from flow
+                        card.style.display = 'none';
+                    }
+                }, 300); // Wait for CSS transition to complete (0.3s)
             });
         });
     });

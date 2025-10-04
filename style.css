@@ -9,6 +9,11 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+/* Apply primary color to the 'All' filter button by default */
+.filter-btn[data-filter="all"] {
+    background-color: var(--primary-color);
+}
+
 /* Home Section Animation */
 @keyframes fadeInSlide {
     0% { opacity: 0; transform: translateY(20px); }
@@ -20,30 +25,48 @@ body {
     animation: fadeInSlide 1s ease-out;
 }
 
+/* Product Card Animation for Filtering */
+.product-card {
+    /* Ensure the cards are ready for filtering transitions */
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+/* This class is used in JS to control visibility, allowing a smoother transition than 'display: none' */
+.product-card.product-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+    /* For a true removal from layout without disrupting grid flow, hide it */
+    position: absolute; /* Take it out of flow */
+    pointer-events: none; /* Make it unclickable */
+    width: 100%; /* Maintain initial width for grid calculation before hide */
+    height: 100%;
+    z-index: -1;
+}
+
 /* Accordion Transition (Interactive Element 3) */
 /* The max-height trick enables a smooth CSS transition */
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    transition: max-height 0.4s cubic-bezier(0.8, 0, 0.2, 1), padding 0.4s cubic-bezier(0.8, 0, 0.2, 1);
 }
 .accordion-content.open {
     max-height: 500px; /* Sufficiently large value for content */
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
+/* Rotate the arrow icon when the content is open */
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
 
 /* Mobile Menu Transition (Interactive Element 1) */
 .mobile-nav-menu {
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     max-height: 0;
-    opacity: 0;
     overflow: hidden;
-    position: absolute; /* Ensures it flows correctly below the header */
-    top: 64px; /* Height of the header */
-    left: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .mobile-nav-menu.open {
-    max-height: 300px; /* Allow menu content to show */
+    max-height: 300px; /* Adjust this height to be taller than the actual menu content */
     opacity: 1;
 }
