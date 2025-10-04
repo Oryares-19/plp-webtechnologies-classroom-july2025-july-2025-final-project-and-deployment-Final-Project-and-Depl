@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulat Pharmaceutical Company - Comprehensive Overview</title>
+    <!-- Link to Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to the custom external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header and Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#home" class="text-xl font-bold text-[--primary-color] tracking-wider">Mulat Aschale Pharmaceutical companey</a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 font-medium">
+                    <a href="#home" class="text-gray-600 hover:text-[--primary-color] transition duration-200">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-[--primary-color] transition duration-200">About Us</a>
+                    <a href="#products" class="text-gray-600 hover:text-[--primary-color] transition duration-200">Products</a>
+                    <a href="#services" class="text-gray-600 hover:text-[--primary-color] transition duration-200">Services</a>
+                    <a href="#contact" class="text-gray-600 hover:text-[--primary-color] transition duration-200">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button (Interactive Element 1: Toggle Menu) -->
+                <button id="menu-toggle" class="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition duration-200">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Navigation Drawer -->
+        <nav id="mobile-menu" class="mobile-nav-menu md:hidden bg-white w-full shadow-inner">
+            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">About Us</a>
+                <a href="#products" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Products</a>
+                <a href="#services" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Services</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-[--secondary-color] hover:bg-green-700 mt-2">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-8">
+
+        <!-- Home Section -->
+        <section id="home" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 bg-white rounded-xl shadow-lg mb-12 hero-animate">
+            <div class="text-center">
+                <h2 class="text-5xl font-extrabold text-[--primary-color] mb-4">Innovating for a Healthier Tomorrow</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">Mulat Aschale Pharmaceutical companey is committed to research, development, and manufacturing of high-quality, accessible medications and health supplements.</p>
+                <a href="#products" class="btn text-white bg-[--primary-color] hover:bg-[#004494] px-8 py-3 rounded-xl shadow-lg transition duration-300 transform hover:scale-105">View Our Catalog</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 border-b-2 border-[--primary-color] inline-block pb-1 mx-auto">About Us</h2>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-[--primary-color] mb-4">Our Vision & History</h3>
+                    <p class="text-gray-700 mb-4">
+                        Founded 2 years ago, Mulat Aschale Pharmaceutical companey began with a mission to bridge the gap in essential healthcare. We have grown into a trusted leader by maintaining rigorous quality standards and a relentless focus on patient needs.
+                    </p>
+                    <p class="text-gray-700">
+                        Our state-of-the-art facilities ensure that every product meets global regulatory compliance, reinforcing our commitment to excellence and trust in the global healthcare community.
+                    </p>
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://placehold.co/600x400/007bff/ffffff?text=Mulat+R%26D+Facility" alt="Research and Development facility" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="bg-gray-100 py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 border-b-2 border-[--primary-color] inline-block pb-1 mx-auto">Our Products</h2>
+
+                <!-- Interactive Element 2: Product Filter -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <button class="filter-btn bg-[--primary-color] text-white px-6 py-2 rounded-full shadow-md hover:bg-[#004494] transition duration-200" data-filter="all">All</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="vitamins">Vitamins</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="otc">OTC Drugs</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="specialty">Specialty</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="specialty">Antibiotics</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="specialty">Antihypertensives</button>
+                    <button class="filter-btn bg-gray-300 text-gray-700 px-6 py-2 rounded-full hover:bg-gray-400 transition duration-200" data-filter="specialty">Statins</button>
+                </div>
+
+                <div id="product-list" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product Card 1 -->
+                    <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="vitamins">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">VitaBoost Daily</h3>
+                        <p class="text-gray-600 mt-2">A comprehensive multivitamin blend supporting immune and cognitive function. Ideal for daily maintenance.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: Vitamins</span>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="otc">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">FeverOut Relief</h3>
+                        <p class="text-gray-600 mt-2">Fast-acting non-prescription medication for pain relief and fever reduction. Available in multiple dosage strengths.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: OTC Drugs</span>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="specialty">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">CardioGuard Rx</h3>
+                        <p class="text-gray-600 mt-2">Specialized cardiovascular formulation requiring prescription. Developed through advanced R&D protocols.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: Specialty</span>
+                    </div>
+                    <!-- Product Card 4 -->
+                     <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="Antibiotics">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">Antibiotics (Antibacterials</h3>
+                        <p class="text-gray-600 mt-2">Compounds designed to kill or inhibit the growth of bacteria. They work by targeting specific bacterial processes, such as cell wall formation or protein synthesis.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: Antibiotics</span>
+                    </div>
+                    <!-- Product Card 5 -->
+                     <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="Antihypertensives">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">Antihypertensives</h3>
+                        <p class="text-gray-600 mt-2">A broad group of drugs used to treat hypertension. Sub-classes (like ACE inhibitors or Beta-blockers) work by either relaxing blood vessels or reducing the amount of fluid the heart has to pump.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: Antihypertensives</span>
+                    </div>
+                    <!-- Product Card 6 -->
+                     <div class="product-card bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-category="Statins">
+                        <h3 class="text-xl font-semibold text-[--primary-color]">Statins (HMG-CoA Reductase Inhibitors)</h3>
+                        <p class="text-gray-600 mt-2">These drugs reduce cholesterol levels in the blood by inhibiting the HMG-CoA reductase enzyme in the liver, which is critical for cholesterol synthesis. They are vital for preventing cardiovascular disease.</p>
+                        <span class="inline-block mt-4 text-sm font-bold text-[--secondary-color]">Category: Statins</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Services Section -->
+        <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12 border-b-2 border-[--primary-color] inline-block pb-1 mx-auto">Our Services</h2>
+            
+            <!-- Interactive Element 3: Accordion Menu -->
+            <div id="services-accordion" class="space-y-4">
+                
+                <!-- Service 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 bg-gray-50 hover:bg-gray-100 transition duration-200" onclick="toggleAccordion(1)">
+                        <span>Contract Manufacturing</span>
+                        <span class="arrow-icon transition-transform duration-300 rotate-0">&#9660;</span>
+                    </button>
+                    <div id="content-1" class="accordion-content bg-white px-5 text-gray-600">
+                        <p>We offer scalable, end-to-end contract manufacturing services, from small-batch runs to large-scale production, adhering strictly to cGMP guidelines.</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Solid Oral Dosage Forms</li>
+                            <li>Liquid and Semi-Solid Production</li>
+                            <li>Packaging and Labeling Services</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <button class="accordion-header w-full flex justify-between items-center p-5 text-lg font-semibold text-left text-gray-800 bg-gray-50 hover:bg-gray-100 transition duration-200" onclick="toggleAccordion(2)">
+                        <span>Quality Assurance & Compliance</span>
+                        <span class="arrow-icon transition-transform duration-300 rotate-0">&#9660;</span>
+                    </button>
+                    <div id="content-2" class="accordion-content bg-white px-5 text-gray-600">
+                        <p>Our commitment to quality is non-negotiable. We maintain ISO and global regulatory compliance, including rigorous testing and documentation for every batch.</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>In-house analytical laboratory</li>
+                            <li>Regulatory filing support</li>
+                            <li>Supplier qualification program</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-[--primary-color] py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+                <h2 class="text-4xl font-bold text-center mb-12 border-b-2 border-white inline-block pb-1 mx-auto">Get in Touch</h2>
+
+                <form id="contact-form" class="bg-white p-8 rounded-xl shadow-2xl text-gray-800">
+                    <p class="mb-6 text-center text-gray-600">For partnership inquiries or product information, please use the form below.</p>
+
+                    <div class="grid sm:grid-cols-2 gap-6 mb-4">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color]">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color]">
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message *</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-[--primary-color] focus:border-[--primary-color]"></textarea>
+                    </div>
+
+                    <!-- Interactive Element 4: Form Validation & Submission -->
+                    <button type="submit" class="w-full bg-[--secondary-color] text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition duration-300 transform hover:scale-[1.01]">Send Inquiry</button>
+                    
+                    <p id="form-message" class="mt-4 text-center text-sm font-medium hidden"></p>
+                </form>
+
+                <div class="mt-10 text-center">
+                    <p class="text-lg font-semibold">Mulat Pharmaceutical Co.Ltd</p>
+                    <p class="text-sm">2119 Healthway Blvd, Bahir Dar City, Ethiopia</p>
+                    <p class="text-sm">Phone: +251- 9-05-03-73-32 | Email: muleraschu7@gmail.com</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Consistent Footer -->
+    <footer class="bg-gray-800 text-white p-8 text-center">
+        <p class="text-sm">&copy; 2025 Mulat Pharmaceutical Company. All rights reserved.</p>
+        <div class="flex justify-center space-x-4 mt-2">
+            <a href="#" class="text-gray-400 hover:text-white transition duration-200">Privacy Policy</a>
+            <span class="text-gray-500">|</span>
+            <a href="#" class="text-gray-400 hover:text-white transition duration-200">Terms of Use</a>
+        </div>
+    </footer>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

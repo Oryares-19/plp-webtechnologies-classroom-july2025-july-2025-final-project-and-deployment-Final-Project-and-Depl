@@ -1,0 +1,49 @@
+/* Variables for consistency */
+:root {
+    --primary-color: #0056b3; /* Deep Blue */
+    --secondary-color: #28a745; /* Green/Success */
+}
+
+/* Tailwind configuration overrides */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Home Section Animation */
+@keyframes fadeInSlide {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-animate {
+    /* Apply animation to the main hero section on load */
+    animation: fadeInSlide 1s ease-out;
+}
+
+/* Accordion Transition (Interactive Element 3) */
+/* The max-height trick enables a smooth CSS transition */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+.accordion-content.open {
+    max-height: 500px; /* Sufficiently large value for content */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Mobile Menu Transition (Interactive Element 1) */
+.mobile-nav-menu {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute; /* Ensures it flows correctly below the header */
+    top: 64px; /* Height of the header */
+    left: 0;
+}
+.mobile-nav-menu.open {
+    max-height: 300px; /* Allow menu content to show */
+    opacity: 1;
+}
